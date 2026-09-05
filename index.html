@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlotte Brown | Strategic Book Specialist Marketer</title>
+  <meta name="description" content="Data-driven launch systems, backlist revivals, and algorithmic marketing for serious independent authors. 100% written accountability." />
+  
+  <!-- Prestige Typography (Fraunces & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & LUXURY DESIGN SYSTEM
+       ========================================================================== */
+    :root {
+      --bg-darkest: #07090e;
+      --bg-dark: #0d111a;
+      --bg-card: #131926;
+      --bg-card-hover: #182032;
+      --bg-glass: rgba(19, 25, 38, 0.75);
+      
+      --gold-primary: #e5a93c;
+      --gold-light: #f7cb73;
+      --gold-dark: #b87c1e;
+      --gold-glow: rgba(229, 169, 60, 0.25);
+      
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(229, 169, 60, 0.35);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-darkest);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.65;
+      background: radial-gradient(circle at 10% 10%, rgba(229, 169, 60, 0.04) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(229, 169, 60, 0.03) 0%, transparent 45%),
+                  var(--bg-darkest);
+    }
+
+    /* Custom Selection */
+    ::selection {
+      background: var(--gold-primary);
+      color: var(--bg-darkest);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       PRELOADER
+       ========================================================================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background-color: var(--bg-darkest);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s;
+    }
+    #preloader.loaded {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .preloader-monogram {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+      letter-spacing: 4px;
+      animation: pulseGlow 2s infinite alternate;
+    }
+    .preloader-bar {
+      width: 180px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-full);
+    }
+    .preloader-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+      animation: loadProgress 1.6s ease-in-out forwards;
+    }
+
+    @keyframes loadProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 10px rgba(229, 169, 60, 0.2); }
+      100% { text-shadow: 0 0 30px rgba(229, 169, 60, 0.7); }
+    }
+
+    /* ==========================================================================
+       LAYOUT UTILITIES
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .section {
+      padding: 7.5rem 0;
+      position: relative;
+    }
+    .section-title-wrap {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 4.5rem;
+    }
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(229, 169, 60, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-full);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 1.25rem;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      line-height: 1.2;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Button System */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.05rem 2.2rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: var(--transition-bounce);
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 60%, var(--gold-dark) 100%);
+      color: var(--bg-darkest);
+      box-shadow: 0 8px 25px var(--gold-glow);
+    }
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(229, 169, 60, 0.45);
+      color: #000;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-light);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: rgba(229, 169, 60, 0.05);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    .header-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      padding: 1.5rem 0;
+    }
+    .header-nav.scrolled {
+      padding: 0.9rem 0;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: var(--bg-darkest);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px var(--gold-glow);
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+    }
+    .logo-subtitle {
+      font-size: 0.72rem;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    .nav-link:hover {
+      color: var(--gold-light);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      transition: var(--transition-smooth);
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 8.5rem;
+      padding-bottom: 5rem;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 1.12;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+    .hero-content h1 span.gold-gradient {
+      background: linear-gradient(135deg, #fff 10%, var(--gold-light) 60%, var(--gold-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: 3.25rem;
+    }
+    .hero-assurances {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .assurance-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      font-weight: 500;
+    }
+    .assurance-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold-primary);
+    }
+
+    /* Hero Portrait Visual */
+    .hero-portrait-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .portrait-frame {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(229, 169, 60, 0.4), rgba(255, 255, 255, 0.05));
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+    .portrait-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: calc(var(--radius-lg) - 6px);
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-card);
+    }
+    .portrait-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.04) brightness(0.98);
+      transition: transform 0.7s ease;
+    }
+    .portrait-frame:hover .portrait-inner img {
+      transform: scale(1.03);
+    }
+    .floating-badge {
+      position: absolute;
+      background: rgba(19, 25, 38, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-gold);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      animation: floatMotion 5s ease-in-out infinite;
+    }
+    .badge-top-right {
+      top: 8%;
+      right: -8%;
+    }
+    .badge-bottom-left {
+      bottom: 8%;
+      left: -8%;
+      animation-delay: -2.5s;
+    }
+    .float-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(229, 169, 60, 0.15);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .float-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .float-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes floatMotion {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ==========================================================================
+       THE CORE DIAGNOSTIC SECTION
+       ========================================================================== */
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .diagnostic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+    .diagnostic-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-gold);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .diag-num {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      margin-bottom: 1.25rem;
+      opacity: 0.85;
+    }
+    .diagnostic-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    .diagnostic-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       SERVICES & CAMPAIGN ARCHITECTURE
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    .service-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+    .service-box:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateY(-5px);
+    }
+    .service-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      background: rgba(229, 169, 60, 0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+    .service-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+    .service-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .service-deliverables {
+      list-style: none;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .service-deliverables li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--text-light);
+    }
+    .service-deliverables li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .service-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+    }
+    .quote-badge {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       HOW WE WORK (ASYNCHRONOUS EXCELLENCE)
+       ========================================================================== */
+    .steps-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    .step-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-5px);
+    }
+    .step-indicator {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(229, 169, 60, 0.15);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .step-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-light);
+    }
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .sla-banner {
+      background: linear-gradient(135deg, rgba(229, 169, 60, 0.12) 0%, rgba(19, 25, 38, 0.95) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .sla-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-light);
+    }
+    .sla-content p {
+      color: var(--text-muted);
+      max-width: 650px;
+    }
+
+    /* ==========================================================================
+       FEATURED AUTHORS / TESTIMONIALS (REAL CLIENTS)
+       ========================================================================== */
+    .testimonial-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    .author-case-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    .author-case-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Visual Pairing: Author Photo + Square Book Cover */
+    .author-media-pair {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .author-avatar-wrap {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border-gold);
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+      transition: var(--transition-smooth);
+    }
+    .author-avatar-wrap:hover {
+      transform: scale(1.08);
+      border-color: var(--gold-light);
+    }
+    .author-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .author-book-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      position: relative;
+      transition: var(--transition-smooth);
+      background: #000;
+    }
+    .author-book-wrap:hover {
+      transform: scale(1.08) rotate(1deg);
+      border-color: var(--gold-primary);
+    }
+    .author-book-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-details {
+      margin-bottom: 1.5rem;
+    }
+    .author-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.25rem;
+    }
+    .author-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      word-break: break-all;
+      margin-bottom: 0.75rem;
+      transition: var(--transition-smooth);
+    }
+    .author-email-link:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+    .author-quote {
+      font-style: italic;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+    
+    /* Verified Amazon Button */
+    .amazon-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+    .amazon-action-btn:hover {
+      background: #ff9900;
+      color: #000;
+      border-color: #ff9900;
+      box-shadow: 0 8px 20px rgba(255, 153, 0, 0.3);
+    }
+    .amazon-action-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       ABOUT CHARLOTTE BROWN (EXECUTIVE BIOGRAPHY)
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .about-portrait-holder {
+      position: relative;
+    }
+    .about-portrait {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .about-portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .about-portrait:hover img {
+      transform: scale(1.02);
+    }
+    .about-badge-card {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      padding: 1.25rem 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .about-badge-card strong {
+      display: block;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+    }
+    .about-badge-card span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+    .about-text h3 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+    .about-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .signature-area {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .signature-name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       START A PROJECT (FORMSPREE POWERED APPLICATION)
+       ========================================================================== */
+    .intake-wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+    .form-label span.req {
+      color: var(--gold-primary);
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.95rem 1.15rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-family: inherit;
+      transition: var(--transition-smooth);
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+    select.form-control option {
+      background: var(--bg-card);
+      color: var(--text-light);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-submit-row {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+      text-align: center;
+    }
+    .form-notice {
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      line-height: 1.6;
+    }
+
+    /* Dynamic Form Submission States */
+    .form-status-alert {
+      display: none;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .form-status-alert.success {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #86efac;
+    }
+    .form-status-alert.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    /* ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #040609;
+      border-top: 1px solid var(--border-subtle);
+      padding: 5rem 0 2.5rem;
+      position: relative;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .footer-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-top: 1.25rem;
+      max-width: 380px;
+    }
+    .footer-heading {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+    }
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .footer-nav a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      transition: var(--transition-smooth);
+    }
+    .footer-nav a:hover {
+      color: var(--gold-light);
+      padding-left: 4px;
+    }
+    .footer-email-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      color: var(--gold-light);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+    }
+
+    /* ==========================================================================
+       SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+       ========================================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (TABLETS & PHONES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-actions, .hero-assurances {
+        justify-content: center;
+      }
+      .hero-portrait-card {
+        order: -1;
+      }
+      .steps-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .testimonial-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .diagnostic-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 2.15rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .intake-wrapper {
+        padding: 2rem 1.5rem;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .sla-banner {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      .steps-timeline {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 340px;
+        height: 100vh;
+        background: var(--bg-card);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition-smooth);
+        border-left: 1px solid var(--border-gold);
+        padding: 2rem;
+      }
+      .nav-links.mobile-open {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .badge-top-right, .badge-bottom-left {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PRELOADER SCREEN
+       ========================================================================== -->
+  <div id="preloader">
+    <div class="preloader-monogram">CB</div>
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Charlotte Brown Homepage">
+        <div class="logo-badge">CB</div>
+        <div class="logo-text">
+          <span class="logo-title">Charlotte Brown</span>
+          <span class="logo-subtitle">Book Specialist Marketer</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#diagnostic" class="nav-link">Strategy</a></li>
+        <li><a href="#services" class="nav-link">Capabilities</a></li>
+        <li><a href="#methodology" class="nav-link">How We Work</a></li>
+        <li><a href="#authors" class="nav-link">Featured Authors</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="btn btn-gold" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">Request Quote</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <div class="badge-tag">
+            <span>&#9670;</span> Algorithmic Campaign Architecture
+          </div>
+          <h1>Transform Your Book into a <span class="gold-gradient">Commercially Viable</span> Digital Asset.</h1>
+          <p class="hero-lead">
+            I engineer data-driven launch systems, execute aggressive backlist turnarounds, and manage high-yield ad campaigns for independent authors. Every engagement is managed exclusively by email for total documentation and verifiable ROI.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">
+              Submit Book for Review
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#authors" class="btn btn-outline">View Client Proof</a>
+          </div>
+          <div class="hero-assurances">
+            <div class="assurance-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% In-Writing SLA</span>
+            </div>
+            <div class="assurance-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Strict 24-Hr Email Window</span>
+            </div>
+            <div class="assurance-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Transparent Tailored Proposals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charlotte Photo Placement 1 -->
+        <div class="hero-portrait-card reveal">
+          <div class="portrait-frame">
+            <div class="portrait-inner">
+              <img src="charlotte.jpg" alt="Charlotte Brown, Professional Book Marketing Specialist" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'" />
+            </div>
+            <div class="floating-badge badge-top-right">
+              <div class="float-icon">&#9733;</div>
+              <div class="float-text">
+                <strong>Verified Outcomes</strong>
+                <span>Algorithmic Optimization</span>
+              </div>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <div class="float-icon">&#9993;</div>
+              <div class="float-text">
+                <strong>Documented Execution</strong>
+                <span>All Decisions in Writing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 1: THE DIAGNOSTIC (WHY MARKETING FAILS)
+       ========================================================================== */
+  -->
+  <section class="section" id="diagnostic">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div class="badge-tag">The Diagnostic</div>
+        <h2 class="section-heading">Why Most Book Promotions Bleed Money Without Producing Royalties</h2>
+        <p class="section-desc">
+          Retail storefronts like Amazon are mathematical discovery engines, not libraries. Authors consistently hit commercial roadblocks by relying on antiquated promotional methods.
+        </p>
+      </div>
+
+      <div class="diagnostic-grid">
+        <div class="diagnostic-card reveal">
+          <div class="diag-num">01</div>
+          <h3>The Social Media Mirage</h3>
+          <p>
+            Posting on social media rarely converts casual scrollers into paying readers. Platform algorithms are designed to trap users within their own ecosystems, not send qualified buyer traffic to Amazon product pages.
+          </p>
+        </div>
+
+        <div class="diagnostic-card reveal">
+          <div class="diag-num">02</div>
+          <h3>The Promo Blast Trap</h3>
+          <p>
+            Cheap discount newsletter blasts trigger temporary, artificial download spikes. These spikes disrupt Amazon’s recommendation engine (COSMO/A9), degrading your long-term organic "Also Bought" associations.
+          </p>
+        </div>
+
+        <div class="diagnostic-card reveal">
+          <div class="diag-num">03</div>
+          <h3>Uncalibrated Ad Spend</h3>
+          <p>
+            Pouring money into Amazon Ads or Meta Ads without addressing underlying retail conversion bottlenecks simply burns capital faster. Traffic must arrive at a mathematically optimized sales page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: SERVICES & CAMPAIGN ARCHITECTURE
+       ========================================================================== -->
+  <section class="section" id="services" style="background: rgba(13, 17, 26, 0.6);">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div class="badge-tag">Capabilities</div>
+        <h2 class="section-heading">Structured Marketing Systems</h2>
+        <p class="section-desc">
+          Comprehensive intervention suites built around conversion data, search intent, and long-term royalties. Tailored pricing is determined by your specific catalog requirements.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-box reveal">
+          <div>
+            <span class="service-badge">New & Upcoming Releases</span>
+            <h3>The Commercial Launch Engine</h3>
+            <p class="service-description">
+              A comprehensive launch infrastructure designed to balance early pre-order velocity with post-launch algorithmic recommendation triggers.
+            </p>
+            <ul class="service-deliverables">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>7 High-volume backend search keyword sets via database mining</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>10 Targeted category browse nodes mapped for display badges</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Conversion-engineered blurb rewrite with mobile HTML formatting</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Launch-week promotional sequence & ARC rollout strategy</span>
+              </li>
+            </ul>
+          </div>
+          <div class="service-cta-row">
+            <span class="quote-badge">Custom Proposal via Email</span>
+            <a href="#contact" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-box reveal">
+          <div>
+            <span class="service-badge">Published Titles & Series</span>
+            <h3>The Catalog Backlist Turnaround</h3>
+            <p class="service-description">
+              A diagnostic intervention for stagnant titles. We identify conversion bottlenecks, update retail presentation, and re-establish algorithmic momentum.
+            </p>
+            <ul class="service-deliverables">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Forensic retail teardown comparing assets against top-20 comp titles</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete rewrite of metadata targeting commercial buyer queries</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Series read-through friction analysis and back-matter optimization</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>30-Day promotional revival roadmap with targeted ad reset</span>
+              </li>
+            </ul>
+          </div>
+          <div class="service-cta-row">
+            <span class="quote-badge">Custom Proposal via Email</span>
+            <a href="#contact" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-box reveal">
+          <div>
+            <span class="service-badge">Hands-Off Ad Scaling</span>
+            <h3>Scaled Paid Acquisition Management</h3>
+            <p class="service-description">
+              Capital-disciplined ad management on Amazon Marketing Services (AMS) and Meta Ads focused on lowering CPC and scaling read-through royalties.
+            </p>
+            <ul class="service-deliverables">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Competitor ASIN, auto-discovery, and narrow-phrase campaign setup</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Weekly search term negative harvesting to eliminate wasteful ad spend</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dynamic bid management based on hourly conversion metrics</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Bi-weekly written performance reports detailing true ACOS and net profit</span>
+              </li>
+            </ul>
+          </div>
+          <div class="service-cta-row">
+            <span class="quote-badge">Custom Proposal via Email</span>
+            <a href="#contact" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-box reveal">
+          <div>
+            <span class="service-badge">Strategic Analysis</span>
+            <h3>Metadata & Conversion Rate Audit</h3>
+            <p class="service-description">
+              An elite diagnostic audit for authors who handle their own promotions but need an expert blueprint to fix their page conversion rate.
+            </p>
+            <ul class="service-deliverables">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Exhaustive page teardown pinpointing why visitors bounce without buying</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Two distinct sales blurb variations tailored to genre expectations</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Amazon A+ Content layout wireframes and narrative copy drafts</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Step-by-step implementation guide for direct dashboard entry</span>
+              </li>
+            </ul>
+          </div>
+          <div class="service-cta-row">
+            <span class="quote-badge">Custom Proposal via Email</span>
+            <a href="#contact" class="btn btn-outline" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: HOW WE WORK (THE ASYNCHRONOUS STANDARD)
+       ========================================================================== -->
+  <section class="section" id="methodology">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div class="badge-tag">Methodology</div>
+        <h2 class="section-heading">The Asynchronous Standard: Everything in Writing</h2>
+        <p class="section-desc">
+          No calls, no unscheduled meetings, no miscommunications. Every brief, deliverable, milestone, and report is delivered via a single, documented email thread.
+        </p>
+      </div>
+
+      <div class="steps-timeline">
+        <div class="step-card reveal">
+          <div class="step-indicator">1</div>
+          <h4>Intake & Review</h4>
+          <p>You submit your book information, publishing history, and commercial targets through the intake application form.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-indicator">2</div>
+          <h4>Written Proposal</h4>
+          <p>Within 48 business hours, you receive a tailored campaign blueprint, fixed scope of work, and execution timeline.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-indicator">3</div>
+          <h4>Direct Execution</h4>
+          <p>Work begins on your agreed start date. All copy drafts, category data, and ad updates land straight in your inbox.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-indicator">4</div>
+          <h4>Final Attribution</h4>
+          <p>You receive a comprehensive wrap-up report detailing before-and-after metrics, ranking stability, and next steps.</p>
+        </div>
+      </div>
+
+      <div class="sla-banner reveal">
+        <div class="sla-content">
+          <h3>Guaranteed 24-Hour Business SLA</h3>
+          <p>Every email sent to this consultancy receives an actionable response within 24 business hours (Monday–Friday). You will never be left wondering about campaign status.</p>
+        </div>
+        <div>
+          <a href="#contact" class="btn btn-gold">Initiate Campaign</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: FEATURED AUTHORS (TESTIMONIALS & PROOF)
+       ========================================================================== -->
+  <section class="section" id="authors" style="background: rgba(13, 17, 26, 0.4);">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div class="badge-tag">Client Proof</div>
+        <h2 class="section-heading">Verified Author Collaborations</h2>
+        <p class="section-desc">
+          Real results achieved for published authors. Click any author portrait or book cover to inspect their live Amazon catalog. Author contact emails are provided for direct reference.
+        </p>
+      </div>
+
+      <div class="testimonial-cards-grid">
+        <!-- AUTHOR 1: James David Victor -->
+        <div class="author-case-card reveal">
+          <div class="author-media-pair">
+            <!-- Author Picture (Circle) -->
+            <a href="https://www.amazon.com/s?k=James+David+Victor+books" target="_blank" rel="noopener noreferrer" class="author-avatar-wrap" title="View James David Victor on Amazon">
+              <img src="James David Victor.jpg" alt="James David Victor" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+            <!-- Book Cover (Square) -->
+            <a href="https://www.amazon.com/s?k=James+David+Victor+books" target="_blank" rel="noopener noreferrer" class="author-book-wrap" title="View Book on Amazon">
+              <img src="James Victor.webp" alt="Book by James David Victor" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+          </div>
+
+          <div class="author-details">
+            <h3 class="author-name">James Victor</h3>
+            <a href="mailto:jamesdavidvictor6@gmail.com" class="author-email-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              jamesdavidvictor6@gmail.com
+            </a>
+          </div>
+
+          <p class="author-quote">
+            "Charlotte completely restructured my Amazon ad campaigns and backend metadata. Her direct, email-only approach saved me dozens of wasted hours. The increase in read-through across my series catalog was evident within three weeks."
+          </p>
+
+          <!-- Amazon CTA Button -->
+          <a href="https://www.amazon.com/s?k=James+David+Victor+books" target="_blank" rel="noopener noreferrer" class="amazon-action-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.93 17.09c-2.83 2.08-6.94 3.2-10.51 3.2-4.99 0-9.48-1.84-12.87-4.92-.26-.24-.04-.57.27-.41 3.65 1.88 8.16 3.01 12.87 3.01 3.16 0 6.64-.72 9.77-2.22.48-.23.86.31.47.64v-.3zM16.92 15.65c-.36-.46-2.37-.22-3.28-.11-.28.03-.32-.2-.07-.38 1.62-1.15 4.28-.82 4.59-.43.32.4-.08 3.09-1.61 4.35-.24.2-.42.09-.3-.18.42-.92 1.03-2.79.67-3.25z"/>
+            </svg>
+            <span>View Amazon Catalog</span>
+          </a>
+        </div>
+
+        <!-- AUTHOR 2: Kate Cullen -->
+        <div class="author-case-card reveal">
+          <div class="author-media-pair">
+            <!-- Author Picture (Circle) -->
+            <a href="https://www.amazon.com/s?k=Kate+Cullen+books" target="_blank" rel="noopener noreferrer" class="author-avatar-wrap" title="View Kate Cullen on Amazon">
+              <img src="Kate Cullen.jpg" alt="Kate Cullen" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+            <!-- Book Cover (Square) -->
+            <a href="https://www.amazon.com/s?k=Kate+Cullen+books" target="_blank" rel="noopener noreferrer" class="author-book-wrap" title="View Book on Amazon">
+              <img src="Kate Book.webp" alt="Book by Kate Cullen" onerror="this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+          </div>
+
+          <div class="author-details">
+            <h3 class="author-name">Kate Cullen</h3>
+            <a href="mailto:katecullen473@gmail.com" class="author-email-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              katecullen473@gmail.com
+            </a>
+          </div>
+
+          <p class="author-quote">
+            "My book launch was feeling disorganized until Charlotte stepped in with her launch framework. She rebuilt the blurb for mobile skimming and targeted the exact micro-categories we needed. We hit #1 New Release in two sub-genres."
+          </p>
+
+          <!-- Amazon CTA Button -->
+          <a href="https://www.amazon.com/s?k=Kate+Cullen+books" target="_blank" rel="noopener noreferrer" class="amazon-action-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.93 17.09c-2.83 2.08-6.94 3.2-10.51 3.2-4.99 0-9.48-1.84-12.87-4.92-.26-.24-.04-.57.27-.41 3.65 1.88 8.16 3.01 12.87 3.01 3.16 0 6.64-.72 9.77-2.22.48-.23.86.31.47.64v-.3zM16.92 15.65c-.36-.46-2.37-.22-3.28-.11-.28.03-.32-.2-.07-.38 1.62-1.15 4.28-.82 4.59-.43.32.4-.08 3.09-1.61 4.35-.24.2-.42.09-.3-.18.42-.92 1.03-2.79.67-3.25z"/>
+            </svg>
+            <span>View Amazon Catalog</span>
+          </a>
+        </div>
+
+        <!-- AUTHOR 3: Rachael C. Duncan -->
+        <div class="author-case-card reveal">
+          <div class="author-media-pair">
+            <!-- Author Picture (Circle) -->
+            <a href="https://www.amazon.com/s?k=Rachael+C.+Duncan+books" target="_blank" rel="noopener noreferrer" class="author-avatar-wrap" title="View Rachael C. Duncan on Amazon">
+              <img src="Rachael C. Duncan.jpg" alt="Rachael C. Duncan" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+            <!-- Book Cover (Square) -->
+            <a href="https://www.amazon.com/s?k=Rachael+C.+Duncan+books" target="_blank" rel="noopener noreferrer" class="author-book-wrap" title="View Book on Amazon">
+              <img src="Rachael Book.webp" alt="Book by Rachael C. Duncan" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=400&auto=format&fit=crop'" />
+            </a>
+          </div>
+
+          <div class="author-details">
+            <h3 class="author-name">Rachael C. Duncan</h3>
+            <a href="mailto:authorrachaelduncan@gmail.com" class="author-email-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              authorrachaelduncan@gmail.com
+            </a>
+          </div>
+
+          <p class="author-quote">
+            "Charlotte approaches book marketing like a quantitative science. Having every update delivered every Friday directly in my inbox gave me total confidence in where my budget was going. She revived a backlist title I had almost given up on."
+          </p>
+
+          <!-- Amazon CTA Button -->
+          <a href="https://www.amazon.com/s?k=Rachael+C.+Duncan+books" target="_blank" rel="noopener noreferrer" class="amazon-action-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.93 17.09c-2.83 2.08-6.94 3.2-10.51 3.2-4.99 0-9.48-1.84-12.87-4.92-.26-.24-.04-.57.27-.41 3.65 1.88 8.16 3.01 12.87 3.01 3.16 0 6.64-.72 9.77-2.22.48-.23.86.31.47.64v-.3zM16.92 15.65c-.36-.46-2.37-.22-3.28-.11-.28.03-.32-.2-.07-.38 1.62-1.15 4.28-.82 4.59-.43.32.4-.08 3.09-1.61 4.35-.24.2-.42.09-.3-.18.42-.92 1.03-2.79.67-3.25z"/>
+            </svg>
+            <span>View Amazon Catalog</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: ABOUT CHARLOTTE BROWN
+       ========================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Charlotte Photo Placement 2 -->
+        <div class="about-portrait-holder reveal">
+          <div class="about-portrait">
+            <img src="charlotte.jpg" alt="Charlotte Brown, Executive Book Marketer" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'" />
+          </div>
+          <div class="about-badge-card">
+            <strong>Charlotte Brown</strong>
+            <span>Publishing Campaign Specialist</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <div class="badge-tag">Executive Profile</div>
+          <h3>"I Treat Your Catalog as an Investment Asset, Not a Hobby."</h3>
+          <p>
+            The self-publishing industry sells authors an idealistic promise: write a compelling manuscript, and readers will naturally find it. But digital storefronts like Amazon, Apple Books, and Kobo are algorithmic marketplaces engineered to maximize sales revenue per square inch of screen space.
+          </p>
+          <p>
+            My role is to serve as the dedicated commercial partner independent authors rarely have access to. I step directly into your catalog to manage the operational levers that dictate digital sales: consumer search intent, metadata science, blurb conversion psychology, and capital-disciplined advertising.
+          </p>
+          <p>
+            Because I run client campaigns personally, your work is never handed off to junior coordinators. I operate without phone calls or unscheduled meetings to ensure my time is dedicated to analyzing data, optimizing campaigns, and driving royalties for your catalog.
+          </p>
+
+          <div class="signature-area">
+            <div>
+              <div class="signature-name">Charlotte Brown</div>
+              <div style="font-size: 0.8rem; color: var(--text-subtle);">Specialist Book Marketer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: INTAKE APPLICATION & QUOTE REQUEST
+       ========================================================================== -->
+  <section class="section" id="contact" style="background: radial-gradient(circle at center, rgba(229, 169, 60, 0.05) 0%, transparent 70%);">
+    <div class="container">
+      <div class="section-title-wrap reveal">
+        <div class="badge-tag">Initiate Project</div>
+        <h2 class="section-heading">Request a Strategic Review & Custom Quote</h2>
+        <p class="section-desc">
+          Complete the application below with your book's details. Qualified projects receive a comprehensive written proposal, itemized scope, and fixed quote within 48 business hours.
+        </p>
+      </div>
+
+      <div class="intake-wrapper reveal">
+        <!-- Formspree Submission Alert Box -->
+        <div id="formStatus" class="form-status-alert"></div>
+
+        <!-- Working Formspree Endpoint -->
+        <form id="projectForm" action="https://formspree.io/f/xgaezqyj" method="POST">
+          <div class="form-grid">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="authorName">Author / Legal Name <span class="req">*</span></label>
+              <input type="text" id="authorName" name="Author_Name" class="form-control" placeholder="e.g., Charlotte Brown" required />
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label class="form-label" for="authorEmail">Email Address (For Written Records) <span class="req">*</span></label>
+              <input type="email" id="authorEmail" name="Email_Address" class="form-control" placeholder="author@domain.com" required />
+            </div>
+
+            <!-- Book Title -->
+            <div class="form-group">
+              <label class="form-label" for="bookTitle">Book Title & Subtitle <span class="req">*</span></label>
+              <input type="text" id="bookTitle" name="Book_Title" class="form-control" placeholder="e.g., The Shadow of Ares" required />
+            </div>
+
+            <!-- Genre -->
+            <div class="form-group">
+              <label class="form-label" for="bookGenre">Genre & Micro-Genre <span class="req">*</span></label>
+              <input type="text" id="bookGenre" name="Genre" class="form-control" placeholder="e.g., Military Sci-Fi / Space Opera" required />
+            </div>
+
+            <!-- Publishing Status -->
+            <div class="form-group">
+              <label class="form-label" for="pubStatus">Current Publishing Status <span class="req">*</span></label>
+              <select id="pubStatus" name="Publishing_Status" class="form-control" required>
+                <option value="" disabled selected>Select status...</option>
+                <option value="Unpublished / Draft Stage">Unpublished / Draft Stage</option>
+                <option value="Live Pre-Order">Live Pre-Order</option>
+                <option value="Published Under 90 Days">Published Under 90 Days</option>
+                <option value="Published Over 90 Days (Backlist)">Published Over 90 Days (Backlist)</option>
+                <option value="Multi-Book Completed Series">Multi-Book Completed Series</option>
+              </select>
+            </div>
+
+            <!-- Primary Service Objective -->
+            <div class="form-group">
+              <label class="form-label" for="primaryGoal">Primary Service Objective <span class="req">*</span></label>
+              <select id="primaryGoal" name="Service_Objective" class="form-control" required>
+                <option value="" disabled selected>Select primary goal...</option>
+                <option value="Full Commercial Launch Campaign">Full Commercial Launch Campaign</option>
+                <option value="Backlist Revival & Turnaround">Backlist Revival & Turnaround</option>
+                <option value="Full-Service Ad Management (AMS/Meta)">Full-Service Ad Management (AMS/Meta)</option>
+                <option value="Metadata & Conversion Rate Audit">Metadata & Conversion Rate Audit</option>
+              </select>
+            </div>
+
+            <!-- Retail Links -->
+            <div class="form-group full-width">
+              <label class="form-label" for="retailLinks">Current Retail Links (Amazon, Kobo, etc.)</label>
+              <input type="text" id="retailLinks" name="Retail_Links" class="form-control" placeholder="https://amazon.com/dp/..." />
+            </div>
+
+            <!-- Current Monthly Unit Volume -->
+            <div class="form-group">
+              <label class="form-label" for="salesVolume">Average Monthly Sales Volume</label>
+              <select id="salesVolume" name="Current_Sales_Volume" class="form-control">
+                <option value="0-15 copies/month">0 to 15 copies / month</option>
+                <option value="15-50 copies/month">15 to 50 copies / month</option>
+                <option value="50-200 copies/month">50 to 200 copies / month</option>
+                <option value="200+ copies/month">200+ copies / month</option>
+              </select>
+            </div>
+
+            <!-- Prior Marketing History -->
+            <div class="form-group">
+              <label class="form-label" for="priorMarketing">Prior Marketing Tactics Attempted</label>
+              <input type="text" id="priorMarketing" name="Prior_Marketing" class="form-control" placeholder="e.g., Amazon Ads, BookBub, Social Media" />
+            </div>
+
+            <!-- Commercial Obstacles & Goals -->
+            <div class="form-group full-width">
+              <label class="form-label" for="obstacles">Core Commercial Obstacle & Project Targets <span class="req">*</span></label>
+              <textarea id="obstacles" name="Obstacles_and_Goals" class="form-control" placeholder="Describe the main challenges this book has faced and what success looks like for this campaign..." required></textarea>
+            </div>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" id="submitBtn" class="btn btn-gold" style="width: 100%; max-width: 420px;">
+              Submit Book for Strategic Review & Quote
+            </button>
+            <p class="form-notice">
+              &#128274; Your information is transmitted securely directly to Charlotte Brown's inbox via Formspree.<br />
+              All responses, scopes of work, and quotations are issued within 24–48 business hours.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo">
+            <div class="logo-badge">CB</div>
+            <div class="logo-text">
+              <span class="logo-title">Charlotte Brown</span>
+              <span class="logo-subtitle">Book Specialist Marketer</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Data-driven campaign systems, retail metadata optimization, and advertising management for independent authors. Every engagement handled 100% in writing for total accountability.
+          </p>
+          <div class="footer-email-box">
+            Direct Inquiries: charlotteb8116@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Campaign Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="#diagnostic">The Strategy Diagnostic</a></li>
+            <li><a href="#services">Specialist Capabilities</a></li>
+            <li><a href="#methodology">The Asynchronous Standard</a></li>
+            <li><a href="#authors">Featured Author Proof</a></li>
+            <li><a href="#about">Executive Biography</a></li>
+            <li><a href="#contact">Request Custom Proposal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Operational Standards</h4>
+          <ul class="footer-nav">
+            <li><span style="color: var(--text-muted);">&#10003; 100% Written Email SLA</span></li>
+            <li><span style="color: var(--text-muted);">&#10003; 24-Hour Action Response Window</span></li>
+            <li><span style="color: var(--text-muted);">&#10003; Searchable Project Paper Trail</span></li>
+            <li><span style="color: var(--text-muted);">&#10003; No Cold Calling or Sales Calls</span></li>
+          </ul>
+          <!-- Charlotte Photo Placement 3 (Small Verified Badge Avatar) -->
+          <div style="display: flex; align-items: center; gap: 0.85rem; margin-top: 1.5rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 1px solid var(--border-gold);">
+              <img src="charlotte.jpg" alt="Charlotte Brown" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop'" />
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">
+              <strong style="color: var(--text-light); display: block;">Charlotte Brown</strong>
+              Direct Campaign Specialist
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="currentYear"></span> Charlotte Brown. All Rights Reserved.</div>
+        <div>Campaign Architecture &bull; Algorithmic Indexing &bull; Zero Calls Policy</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT: LOGIC, ANIMATIONS & FORMSPREE SUBMISSION
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Preloader Fadeout
+      const preloader = document.getElementById('preloader');
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+        }, 500);
+      });
+      // Fallback preloader removal
+      setTimeout(() => {
+        if (!preloader.classList.contains('loaded')) {
+          preloader.classList.add('loaded');
+        }
+      }, 2000);
+
+      // 2. Set Dynamic Copyright Year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // 3. Navbar Sticky Effect on Scroll
+      const headerNav = document.getElementById('mainHeader');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          headerNav.classList.add('scrolled');
+        } else {
+          headerNav.classList.remove('scrolled');
+        }
+      });
+
+      // 4. Mobile Menu Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        menuToggle.innerHTML = navLinks.classList.contains('mobile-open') ? '&times;' : '&#9776;';
+      });
+
+      // Close menu on link click
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          menuToggle.innerHTML = '&#9776;';
+        });
+      });
+
+      // 5. Scroll Reveal Animations (Intersection Observer)
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+
+      // 6. Asynchronous Formspree Form Handling (Direct to Charlotte's Inbox)
+      const projectForm = document.getElementById('projectForm');
+      const formStatus = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+
+      if (projectForm) {
+        projectForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Loading state
+          submitBtn.disabled = true;
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.textContent = 'Transmitting Details to Charlotte Brown...';
+          formStatus.style.display = 'none';
+
+          const formData = new FormData(projectForm);
+
+          try {
+            const response = await fetch(projectForm.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+
+            if (response.ok) {
+              // Success feedback
+              formStatus.className = 'form-status-alert success';
+              formStatus.innerHTML = `
+                <strong>Application Received Successfully.</strong><br />
+                Thank you for submitting your project details. Your information has been delivered directly to Charlotte Brown's inbox. 
+                You will receive a strategic evaluation and custom written proposal within <strong>24 to 48 business hours</strong> at the email provided.
+              `;
+              formStatus.style.display = 'block';
+              projectForm.reset();
+              // Smooth scroll to alert
+              formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              const data = await response.json();
+              throw new Error(data.error || 'There was an issue processing your submission.');
+            }
+          } catch (error) {
+            // Error feedback
+            formStatus.className = 'form-status-alert error';
+            formStatus.innerHTML = `
+              <strong>Submission Error:</strong> Unable to send your details right now.<br />
+              Please email your project details directly to <strong>charlotteb8116@gmail.com</strong>.
+            `;
+            formStatus.style.display = 'block';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
